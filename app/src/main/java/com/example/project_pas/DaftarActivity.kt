@@ -32,6 +32,7 @@ class DaftarActivity : AppCompatActivity(), View.OnClickListener {
         auth = FirebaseAuth.getInstance()
         // Set OnClickListener untuk tombol
         binding.btnDaftar.setOnClickListener(this)
+        binding.txtLogin.setOnClickListener(this)
     }
 
     override fun onClick(v: View) {
@@ -41,6 +42,11 @@ class DaftarActivity : AppCompatActivity(), View.OnClickListener {
                 val email = binding.edEmail.text.toString()
                 val password = binding.edPassword.text.toString()
                 createAccount(email, password)
+            }
+            R.id.txt_Login -> {
+                // Navigasi ke SignInActivity
+                val intent = Intent(this, LoginActivity::class.java)
+                startActivity(intent)
             }
         }
     }

@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -58,6 +59,7 @@ class LandingPage : AppCompatActivity(), View.OnClickListener {
         auth = FirebaseAuth.getInstance()
         // Set OnClickListener untuk tombol
         binding.btnKeluar.setOnClickListener(this)
+        binding.btnverifemail.setOnClickListener(this)
     }
 
     override fun onStart() {
@@ -81,6 +83,10 @@ class LandingPage : AppCompatActivity(), View.OnClickListener {
                 // Logout pengguna
                 signOut()
             }
+            R.id.btnverifemail -> {
+                // Kirim email verifikasi
+                sendEmailVerification()
+            }
         }
     }
 
@@ -90,6 +96,26 @@ class LandingPage : AppCompatActivity(), View.OnClickListener {
         val intent = Intent(this,LoginActivity::class.java)
         startActivity(intent)
         finish()
+    }
+    // Fungsi untuk mengirim email verifikasi
+    private fun sendEmailVerification() {
+        val user = auth.currentUser
+        user?.sendEmailVerification()
+            ?.addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    Toast.makeText(
+                        this,
+                        "Verification email sent to ${user.email}",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                } else {
+                    Toast.makeText(
+                        this,
+                        "Failed to send verification email.",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+            }
     }
 
     // Fungsi untuk memperbarui UI dengan informasi pengguna
@@ -102,11 +128,11 @@ class LandingPage : AppCompatActivity(), View.OnClickListener {
             val email = it.email ?: "No Email"
             binding.tvName.text = email
             // Sembunyikan tombol verifikasi email jika email sudah terverifikasi
-//            if (it.isEmailVerified) {
-//                binding.btnEmailVerify.visibility = View.GONE
-//            } else {
-//                binding.btnEmailVerify.visibility = View.VISIBLE
-//            }
+            if (it.isEmailVerified) {
+                binding.btnverifemail.visibility = View.GONE
+            } else {
+                binding.btnverifemail.visibility = View.VISIBLE
+            }
         }
     }
 }
