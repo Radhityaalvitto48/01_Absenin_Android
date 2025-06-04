@@ -1,0 +1,45 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="16dp"
+    android:layout_margin="8dp"
+    android:background="@drawable/bg_rounded"
+    android:gravity="center_vertical">
+
+    <!-- Texts dibungkus biar sejajar -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvNamaKelas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Item 1"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/tvJumSiswa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sub Item 1"
+            android:textSize="14sp"
+            android:textColor="#666666"
+            android:paddingTop="4dp"/>
+    </LinearLayout>
+
+    <!-- Tombol titik 3 -->
+    <ImageView
+        android:id="@+id/btnMenu"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_more_vert"
+        android:contentDescription="Menu"
+        android:layout_marginStart="8dp" />
+</LinearLayout>

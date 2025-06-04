@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LandingPage"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LandingPage">
+
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="61dp"
+        android:layout_marginBottom="76dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/rectangelblue" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:text="Selamat Siang"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="@+id/imageView2"
+        tools:ignore="ExtraText" />
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="114dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="233dp"
+        android:text="Selamat datang!"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="80dp"
+        android:text="Name"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="126dp"
+        android:text="“Jangan Lupa Absensi teman temanmu”"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
+    <Button
+        android:id="@+id/btnmasuk"
+        android:layout_width="348dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="49dp"
+        android:layout_marginEnd="33dp"
+        android:text="Masuk"
+        android:textColorLink="#694141"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <Button
+        android:id="@+id/btnKeluar"
+        android:layout_width="348dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="33dp"
+        android:text="Keluar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnmasuk" />
+
+    <Button
+        android:id="@+id/btnverifemail"
+        android:layout_width="208dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="96dp"
+        android:layout_marginEnd="33dp"
+        android:backgroundTint="@color/blue"
+        android:text="Send Verification Email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.518"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnmasuk" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="49dp"
+        android:layout_height="38dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnmasuk"
+        app:layout_constraintEnd_toEndOf="@+id/btnmasuk"
+        app:layout_constraintHorizontal_bias="0.137"
+        app:layout_constraintStart_toStartOf="@+id/btnmasuk"
+        app:layout_constraintTop_toTopOf="@+id/btnmasuk"
+        app:layout_constraintVertical_bias="0.526"
+        app:srcCompat="@drawable/logopintubiru" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="40dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnKeluar"
+        app:layout_constraintStart_toStartOf="@+id/btnKeluar"
+        app:layout_constraintTop_toTopOf="@+id/btnKeluar"
+        app:layout_constraintVertical_bias="0.529"
+        app:srcCompat="@drawable/pintured" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/rectangelblack" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="wrap_content"
+        android:layout_height="46dp"
+        android:layout_marginStart="324dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imageView6"
+        app:layout_constraintTop_toTopOf="@+id/imageView6"
+        app:layout_constraintVertical_bias="0.578"
+        app:srcCompat="@drawable/profilewhite" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="49dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="180dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imageView6"
+        app:layout_constraintTop_toTopOf="@+id/imageView6"
+        app:layout_constraintVertical_bias="0.625"
+        app:srcCompat="@drawable/absensiwhite" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="56dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imageView6"
+        app:layout_constraintTop_toTopOf="@+id/imageView6"
+        app:layout_constraintVertical_bias="0.687"
+        app:srcCompat="@drawable/homeblue" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

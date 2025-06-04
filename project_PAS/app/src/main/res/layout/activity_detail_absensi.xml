@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailAbsensiActivity">
+
+    <!-- Header Bar -->
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="0dp"
+        android:layout_height="61dp"
+        android:src="@drawable/rectangelblue"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Detail Absensi"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/imageView2"
+        app:layout_constraintBottom_toBottomOf="@id/imageView2" />
+
+    <!-- Form Pilihan -->
+    <LinearLayout
+        android:id="@+id/formFilter"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="#F5F5F5"
+        app:layout_constraintTop_toBottomOf="@id/imageView2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Pilih Sekolah -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pilih Sekolah"
+            android:textSize="14sp"
+            android:textColor="#000000"
+            android:layout_marginBottom="4dp" />
+
+        <Spinner
+            android:id="@+id/spinnerSekolah"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:spinnerMode="dropdown" />
+
+        <!-- Pilih Kelas -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pilih Kelas"
+            android:textSize="14sp"
+            android:textColor="#000000"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="4dp" />
+
+        <Spinner
+            android:id="@+id/spinnerKelas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:spinnerMode="dropdown" />
+
+        <!-- Pilih Tanggal -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tanggal Absensi"
+            android:textSize="14sp"
+            android:textColor="#000000"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="4dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- ID diganti agar sesuai dengan kode Kotlin -->
+            <TextView
+                android:id="@+id/editTextTanggal"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Pilih Tanggal"
+                android:textSize="16sp"
+                android:padding="8dp"
+                android:background="#EEEEEE"
+                android:textColor="#000000" />
+
+            <Button
+                android:id="@+id/btnPilihTanggal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📅"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- RecyclerView untuk daftar siswa -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/layoutDaftarSiswa"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="8dp"
+        app:layout_constraintTop_toBottomOf="@id/formFilter"
+        app:layout_constraintBottom_toBottomOf="@id/imageView6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:clipToPadding="false" />
+
+    <!-- Tombol Checklist Selesai -->
+    <ImageButton
+        android:id="@+id/btnSelesai"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="35dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_kecilcheck"
+        app:layout_constraintBottom_toTopOf="@id/imageView6"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <!-- Bottom Navigation Bar -->
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/rectangelblack" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="wrap_content"
+        android:layout_height="46dp"
+        android:layout_marginStart="324dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imageView6"
+        app:layout_constraintTop_toTopOf="@+id/imageView6"
+        app:layout_constraintVertical_bias="0.578"
+        app:srcCompat="@drawable/profilewhite" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="49dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="180dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imageView6"
+        app:layout_constraintTop_toTopOf="@+id/imageView6"
+        app:layout_constraintVertical_bias="0.625"
+        app:srcCompat="@drawable/absensiblue" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="56dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imageView6"
+        app:layout_constraintTop_toTopOf="@+id/imageView6"
+        app:layout_constraintVertical_bias="0.687"
+        app:srcCompat="@drawable/homewhite" />
+</androidx.constraintlayout.widget.ConstraintLayout>

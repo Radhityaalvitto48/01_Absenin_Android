@@ -18,11 +18,6 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
-
-    buildFeatures {
-        viewBinding = true
-    }
-
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -31,6 +26,9 @@ android {
                 "proguard-rules.pro"
             )
         }
+    }
+    buildFeatures {
+        viewBinding = true
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -51,8 +49,10 @@ dependencies {
 
     implementation("androidx.recyclerview:recyclerview:1.3.2")
     implementation("de.hdodenhof:circleimageview:3.1.0")
+    implementation("com.google.firebase:firebase-bom:32.7.3")
     implementation("com.github.bumptech.glide:glide:4.10.0")
     implementation(libs.firebase.auth.ktx)
+    implementation(libs.firebase.database.ktx)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
@@ -62,8 +62,8 @@ dependencies {
     annotationProcessor("com.github.bumptech.glide:compiler:4.15.1")
 
     implementation ("androidx.cardview:cardview:1.0.0")
-
     implementation("com.google.firebase:firebase-auth-ktx")
-    implementation("com.google.firebase:firebase-bom:31.5.0")
     implementation("com.google.android.gms:play-services-auth:20.4.0")
-}
+    implementation ("com.google.firebase:firebase-firestore:25.1.4")
+
+    }
